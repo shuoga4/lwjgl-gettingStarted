@@ -77,9 +77,7 @@ public class HelloWorld {
                 System.out.println("hi!");
                 glfwSetWindowShouldClose(window, true);
             }
-                // We will detect this in the rendering loop
-                // ループの中にコールバックが入っていなくても、inputやeventが起こるとすぐ帰って来るから
-                // コールバックと呼ぶのかも。だから初期化フェーズとループフェーズを分離しているのか?
+                // We will detect this in the rendering loop // ループの中にコールバックが入っていなくても、inputやeventが起こるとすぐ帰って来るから // コールバックと呼ぶのかも。だから初期化フェーズとループフェーズを分離しているのか?
 
         });
 
@@ -100,6 +98,7 @@ public class HelloWorld {
                     (vidmode.width() - pWidth.get(0)) / 2,
                     (vidmode.height() - pHeight.get(0)) / 2
             );
+            System.out.println("Resolution: " + vidmode.width() + "x" + vidmode.height());
             System.out.println("Window size: " + pWidth.get(0) + "x" + pHeight.get(0));
         } // the stack frame is popped automatically
 
@@ -128,6 +127,7 @@ public class HelloWorld {
         // creates the GLCapabilities instance and makes the OpenGL
         // bindings available for use.
         GL.createCapabilities();
+        // 以降OpenGL機能解禁
 
         // Set the clear color
         glClearColor(1.0f, 0.0f, 0.0f, 0.0f);
